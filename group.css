@@ -1,11 +1,12 @@
 body {
     background-color: antiquewhite;
     text-align: center;
+    margin: 0;
 }
 
 #header {
-    font-size: 50px;
-    background-color: brown;
+    font-size: 100px;
+    color: rgb(85, 85, 85);
 }
 
 .bottom {
@@ -13,19 +14,16 @@ body {
     width: auto;
     margin-left: auto;
     margin-right: auto;
-    background-color: seagreen;
 }
 
 .boxes {
     height: 400px;
     width: 800px;
-    background-color: salmon;
     margin-right: auto;
     margin-left: auto;
 }
 
 #input {
-    background-color: blue;
     height: 250px;
     width: 350px;
     float: left;
@@ -34,7 +32,6 @@ body {
 }
 
 #output {
-    background-color: blueviolet;
     height: 250px;
     width: 350px;
     float: right;
@@ -45,7 +42,6 @@ body {
 #button {
     height: 60px;
     width: 100px;
-    background-color: crimson;
     margin-right: auto;
     margin-left: auto;
     border: solid;
