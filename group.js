@@ -38,6 +38,7 @@ var queryURLdatamuse = "https://api.datamuse.com/words?ml=cat"
 var queryURLdatamuse1 = "https://api.datamuse.com/words?rel_trg=run"
 
 $.ajax({
+
     url: queryURLdatamuse1,
     method: "GET"
   })
