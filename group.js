@@ -35,9 +35,16 @@
 // Datamuse
 
 var queryURLdatamuse = "https://api.datamuse.com/words?ml=cat"
+<<<<<<< HEAD
 var queryURLdatamuse1 = "https://api.datamuse.com/words?rel_trg=dog"
 
   $.ajax({
+=======
+var queryURLdatamuse1 = "https://api.datamuse.com/words?rel_trg=run"
+
+$.ajax({
+
+>>>>>>> cda6223bf58f1180b563948a62e0b376d6321901
     url: queryURLdatamuse1,
     method: "GET"
   })
