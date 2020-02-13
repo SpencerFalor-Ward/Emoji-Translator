@@ -31,31 +31,50 @@ body {
 
 .boxes {
     height: 400px;
-    width: 800px;
+    width: 840px;
     margin-right: auto;
     margin-left: auto;
 }
 
 #input {
     height: 250px;
-    width: 350px;
+    width: 360px;
     float: left;
     border: solid;
     border-color: black;
     color: rgb(173, 173, 173);
     background-color:rgb(229, 255, 0);
     box-shadow: 0px 0px 10px black;
+    padding: 5px;
+    margin-right: 40px;
+}
+
+#inputField {
+    background-color:rgb(229, 255, 0);
+    padding: 5px;
+    height: 240px;
+    width: 350px;
+    border-width: 0;
 }
 
 #output {
     height: 250px;
-    width: 350px;
+    width: 360px;
     float: right;
     border: solid;
     border-color: black;
     color: rgb(173, 173, 173);
     background-color:rgb(229, 255, 0);   
     box-shadow: 0px 0px 10px black;
+    margin-left: 40px;
+}
+
+#outputField {
+    background-color:rgb(229, 255, 0);
+    padding: 5px;
+    height: 240px;
+    width: 350px;
+    border-width: 0;
 }
 
 #button {
@@ -67,4 +86,8 @@ body {
     border-color: black;
     background-color:rgb(229, 255, 0);
     box-shadow: 0px 0px 10px black;
+}
+
+button {
+    background-color: rgb(229, 255, 0);
 }
