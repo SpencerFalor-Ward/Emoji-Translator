@@ -2,7 +2,7 @@
 
 
 
-
+var tester = ["face", "goog", "brexit"]
 // Emoji-api
 // https://emoji-api.com/emojis - emojis with group, subgroup, name, etc
 // https://emoji-api.com/emojis?search=computer - emoji search by keyword (computer in this case)
@@ -26,11 +26,28 @@ $("#button").click(function() {
   for (let i = 0; i < response.length; i++) {
     // this creates an array of all of the emoji names 
     emojiArray.push(response[i].slug);
-    console.log(emojiArray);
-  }  
     
+    
+  }
+  console.log(emojiArray);
+  allIndexOf(emojiArray);  
 
   })
 })
+
+var spain = "face"
+
+function allIndexOf (emojiArray) {
+  var indices = [];
+  for (let i = 0; i < emojiArray.length; i++) {
+    emojiYes = emojiArray[i].search("car")
+    if (emojiYes > -1) {
+      indices.push(i)
+    }
+  }
+  console.log(indices);
+}
+
+
 
 
