@@ -8,8 +8,6 @@ var emojiList = [];
 // ajax query of the database- can be altered with above parameters
 // var inputText is a placeholder until more robust word-sliced input is created
 
-  
-
 
 // this ajax query calls up all emojis who's name("code") contains the inputField text 
 $("#button").click(function(event) {
@@ -49,37 +47,38 @@ function allIndexOf (emojiArray) {
 
 // creating array with an object for each selected emoji containing split words, enabling a search differentiating "headscarf" from "car"
 function wordSlicer (indices) {
-  var words = [];
+  var matched = [];
   for (let i = 0; i < indices.length; i++) {
-     words[i] = {full: emojiArray[indices[i]], broken: emojiArray[indices[i]].split(" ")}
-    console.log(words);
-     // selecting items from the indices array which fail to meet the split word critereon and removing them from the array ie. "headscarf" is removed, but "car" remains
-     var wordMatch = [];
-     for (let j = 0; j < words[i].broken.length; j++) {
-           
-         wordMatch[i] = words[i].broken[j]
-         if  (wordMatch[i] === inputText){
-            indices.splice(i, 1);
-          }
-          break;
+     var word = {full: emojiArray[indices[i]], broken: emojiArray[indices[i]].split(" ")}
+    console.log(word)
+    
+    // selecting items from the indices array which fail to meet the split word critereon and removing them from the array ie. "headscarf" is removed, but "car" remains
+     for (let j = 0; j < word.broken.length; j++) {
+         var wordMatch = word.broken[j]
+         console.log(wordMatch);
 
+         if(wordMatch === inputText){
+            matched.push(indices[i]);
+            break;
+          }
       }
-           
+               
      
   } 
-  console.log(indices)
-  emojiPlacer(indices);
+  console.log(matched);
+  console.log(indices);
+  emojiPlacer(matched);
 }
 
 // selecting a random index from within the indices array for a final emoji pick
 
 
-function emojiPlacer (indices) {
+function emojiPlacer (matched) {
 
-  var EMOJI = indices[Math.floor(Math.random() * indices.length)]
+  var EMOJI = matched[Math.floor(Math.random() * matched.length)]
   console.log(EMOJI)
-  $("<span></span>").text(emojiList[EMOJI].unicode)
-  
+  var spoon = $("#header").text(`&#x${emojiList[EMOJI].unicode};`)
+  console.log(spoon)
 }
 
 
@@ -129,20 +128,20 @@ textRazorAPI();
 var emojiArray = [];
 
 // ajax query of the database- can be altered with above parameters
-$("#button").click(function() {
-  textRazorAPI(inputText);
-  var inputText = $("#inputField").val();
+// $("#button").click(function() {
+//   textRazorAPI(inputText);
+//   var inputText = $("#inputField").val();
 
-  var queryURL = "https://emoji-api.com/emojis";
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-    console.log(response);
-    for (let i = 0; i < response.length; i++) {
-      // this creates an array of all of the emoji names
-      emojiArray.push(response[i].slug);
-    }
-  });
-  console.log(emojiArray);
-});
+//   var queryURL = "https://emoji-api.com/emojis";
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET"
+//   }).then(function(response) {
+//     console.log(response);
+//     for (let i = 0; i < response.length; i++) {
+//       // this creates an array of all of the emoji names
+//       emojiArray.push(response[i].slug);
+//     }
+//   });
+//   console.log(emojiArray);
+// });
