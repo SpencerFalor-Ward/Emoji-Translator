@@ -14,7 +14,7 @@ function textRazorAPI() {
       text: $("#inputField")
         .val()
         .trim()
-      // "Spain's stricken Bankia expects to sell off its vast portfolio of industrial holdings that includes a stake in the parent company of British Airways and Iberia."
+
     }
   }).done(function(response) {
     for (var i = 0; i < response.response.sentences[0].words.length; i++) {
@@ -23,15 +23,6 @@ function textRazorAPI() {
         word: response.response.sentences[0].words[i].token,
         part: response.response.sentences[0].words[i].partOfSpeech
       });
-      // for (
-      //   var i = 0;
-      //   i < response.response.sentences[0].words[0].partOfSpeech.length;
-      //   i++
-      // ) {
-      // var wordListPart = [];
-      // wordListPart.push();
-      // console.log(wordListPart);
-      // }
       console.log(wordList);
     }
     console.log(response);
@@ -125,7 +116,6 @@ function textRazorAPI() {
       text: $("#inputField")
         .val()
         .trim()
-      // "Spain's stricken Bankia expects to sell off its vast portfolio of industrial holdings that includes a stake in the parent company of British Airways and Iberia."
     }
   }).done(function(response) {
     for (var i = 0; i < response.response.sentences[0].words.length; i++) {
