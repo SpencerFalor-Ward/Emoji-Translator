@@ -1,4 +1,3 @@
-
 //textRazor api code
 function textRazorAPI() {
   $.ajax({
@@ -12,69 +11,34 @@ function textRazorAPI() {
     },
     data: {
       extractors: "words,partOfSpeech,param,relations, wikidataId",
-      text: $("#inputField").val()
+      text: $("#inputField")
+        .val()
+        .trim()
       // "Spain's stricken Bankia expects to sell off its vast portfolio of industrial holdings that includes a stake in the parent company of British Airways and Iberia."
     }
   }).done(function(response) {
+    for (var i = 0; i < response.response.sentences[0].words.length; i++) {
+      var wordList = [];
+      wordList.push(response.response.sentences[0].words[i].token);
+      for (
+        var i = 0;
+        i < response.response.sentences[0].words[0].partOfSpeech.length;
+        i++
+      ) {
+        var wordListPart = [];
+        wordListPart.push(
+          response.response.sentences[0].words[0].partOfSpeech[i]
+        );
+        console.log(wordListPart);
+      }
+      console.log(wordList);
+    }
     console.log(response);
   });
 }
+
 textRazorAPI();
 
-
-
-var tester = ["face", "goog", "brexit"]
-
-// Emoji-api
-// https://emoji-api.com/emojis - emojis with group, subgroup, name, etc
-// https://emoji-api.com/emojis?search=computer - emoji search by keyword (computer in this case)
-// https://emoji-api.com/categories - emoji categories
-// https://emoji-api.com/categories/travel-places - all emojis within a single category
-
-
-// an array to populate with emoji names for searching
-var emojiArray =[];
-
-// ajax query of the database- can be altered with above parameters
-$("#button").click(function() {
-  var inputText = $("#inputField").val();
-  
-  var queryURL = "https://emoji-api.com/emojis" 
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-  .then(function(response){
-    console.log(response);
-  for (let i = 0; i < response.length; i++) {
-    // this creates an array of all of the emoji names 
-    emojiArray.push(response[i].slug);
-    
-    
-  }
-  console.log(emojiArray);
-  allIndexOf(emojiArray);  
-
-  })
-})
-
-var spain = "face"
-
-function allIndexOf (emojiArray) {
-  var indices = [];
-  for (let i = 0; i < emojiArray.length; i++) {
-    emojiYes = emojiArray[i].search("car")
-    if (emojiYes > -1) {
-      indices.push(i)
-    }
-  }
-  console.log(indices);
-}
-
-
-
-
-// an array to populate with emoji names for searching
 var emojiArray = [];
 
 // ajax query of the database- can be altered with above parameters
