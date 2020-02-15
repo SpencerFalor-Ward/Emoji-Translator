@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 
@@ -86,7 +85,6 @@ function emojiPlacer (indices) {
 
 
 
-=======
 //textRazor api code
 function textRazorAPI() {
   $.ajax({
@@ -148,4 +146,3 @@ $("#button").click(function() {
   });
   console.log(emojiArray);
 });
->>>>>>> 3ff7ab1f8e9a54376e924fba1d8a8b25de78442d
