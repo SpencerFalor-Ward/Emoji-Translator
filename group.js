@@ -20,6 +20,17 @@ function textRazorAPI() {
     for (var i = 0; i < response.response.sentences[0].words.length; i++) {
       var wordList = [];
       wordList.push(response.response.sentences[0].words[i].token);
+      for (
+        var i = 0;
+        i < response.response.sentences[0].words[0].partOfSpeech.length;
+        i++
+      ) {
+        var wordListPart = [];
+        wordListPart.push(
+          response.response.sentences[0].words[0].partOfSpeech[i]
+        );
+        console.log(wordListPart);
+      }
       console.log(wordList);
     }
     console.log(response);
