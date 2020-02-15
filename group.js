@@ -11,22 +11,23 @@ function textRazorAPI() {
     },
     data: {
       extractors: "words,partOfSpeech,param,relations, wikidataId",
-      text: $("#inputField").val()
+      text: $("#inputField")
+        .val()
+        .trim()
       // "Spain's stricken Bankia expects to sell off its vast portfolio of industrial holdings that includes a stake in the parent company of British Airways and Iberia."
     }
   }).done(function(response) {
+    for (var i = 0; i < response.response.sentences[0].words.length; i++) {
+      var wordList = [];
+      wordList.push(response.response.sentences[0].words[i].token);
+      console.log(wordList);
+    }
     console.log(response);
   });
 }
+
 textRazorAPI();
 
-// Emoji-api
-// https://emoji-api.com/emojis - emojis with group, subgroup, name, etc
-// https://emoji-api.com/emojis?search=computer - emoji search by keyword (computer in this case)
-// https://emoji-api.com/categories - emoji categories
-// https://emoji-api.com/categories/travel-places - all emojis within a single category
-
-// an array to populate with emoji names for searching
 var emojiArray = [];
 
 // ajax query of the database- can be altered with above parameters
