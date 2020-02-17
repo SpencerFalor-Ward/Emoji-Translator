@@ -183,7 +183,7 @@ function textRazorAPI() {
     function emojiPlacer(indices) {
       var EMOJI = indices[Math.floor(Math.random() * indices.length)];
       console.log("EMOJI:", EMOJI);
-      $("<span></span>").text(emojiList[EMOJI].unicode);
+      $("<span></span>").text("0x" + emojiList[EMOJI].unicode);
     }
     var filteredWords = wordList.filter(function(wordObj) {
       return emojiArray.indexOf(wordObj.word) > -1;
