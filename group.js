@@ -39,7 +39,7 @@ function allIndexOf (emojiArray) {
       indices.push(i)
     }
   }
-  console.log(indices);
+  // console.log(indices);
   wordSlicer(indices);
 
 }
@@ -65,8 +65,8 @@ function wordSlicer (indices) {
                
      
   } 
-  console.log(matched);
-  console.log(indices);
+  // console.log(matched);
+  // console.log(indices);
   emojiPlacer(matched);
 }
 
@@ -77,8 +77,11 @@ function emojiPlacer (matched) {
 
   var EMOJI = matched[Math.floor(Math.random() * matched.length)]
   console.log(EMOJI)
-  var spoon = $("#header").text(`&#x${emojiList[EMOJI].unicode};`)
-  console.log(spoon)
+  var spoon = $("#outputField")
+  var emojiIcon = String.fromCodePoint("0x" + emojiList[EMOJI].unicode)
+
+  spoon.text(emojiIcon)
+  console.log(emojiIcon)
 }
 
 
@@ -125,23 +128,3 @@ function textRazorAPI() {
 
 textRazorAPI();
 
-var emojiArray = [];
-
-// ajax query of the database- can be altered with above parameters
-// $("#button").click(function() {
-//   textRazorAPI(inputText);
-//   var inputText = $("#inputField").val();
-
-//   var queryURL = "https://emoji-api.com/emojis";
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET"
-//   }).then(function(response) {
-//     console.log(response);
-//     for (let i = 0; i < response.length; i++) {
-//       // this creates an array of all of the emoji names
-//       emojiArray.push(response[i].slug);
-//     }
-//   });
-//   console.log(emojiArray);
-// });
