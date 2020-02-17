@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 519215411034944c2fc9d5a838a71828509ec22e
 // an array to populate with emoji names for searching
 var emojiArray =[];
 var inputText = "red";
@@ -88,13 +82,9 @@ function emojiPlacer (matched) {
 }
 
 
-<<<<<<< HEAD
-
-=======
 var wordList = [];
 
 //the compiled working code is within textRazor to keep scope correct
->>>>>>> 519215411034944c2fc9d5a838a71828509ec22e
 
 //textRazor api code
 function textRazorAPI() {
@@ -193,7 +183,7 @@ function textRazorAPI() {
     function emojiPlacer(indices) {
       var EMOJI = indices[Math.floor(Math.random() * indices.length)];
       console.log("EMOJI:", EMOJI);
-      $("<span></span>").text(emojiList[EMOJI].unicode);
+      $("<span></span>").text("0x" + emojiList[EMOJI].unicode);
     }
     var filteredWords = wordList.filter(function(wordObj) {
       return emojiArray.indexOf(wordObj.word) > -1;
@@ -218,8 +208,6 @@ $("#button").click(function(event) {
  // ajax query of the database- can be altered with above parameters
  // var inputText is a placeholder until more robust word-sliced input is created
 
-<<<<<<< HEAD
-=======
 
  // this ajax query calls up all emojis who's name("code") contains the inputField text
  $("#button").click(function(event) {
@@ -365,4 +353,3 @@ $("#button").click(function(event) {
 });
 */
 
->>>>>>> 519215411034944c2fc9d5a838a71828509ec22e
