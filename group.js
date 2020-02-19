@@ -1,6 +1,14 @@
 
 
 //the compiled working code is within textRazor to keep scope correct
+var emojiArray = [];
+var currentWord = [];
+var masterWordHolder = new Array();
+
+//textRazor api code
+function textRazorAPI() {
+  var wordList = [];
+
 
 var emojiArray = [];
 var currentWord = [];
@@ -29,6 +37,118 @@ function textRazorAPI() {
         .val()
         .trim()
     }
+
+    })
+    .then(function(response) {
+    // creates list of individual words from the textInput field
+      
+      for (var i = 0; i < response.response.sentences[0].words.length; i++) {
+          wordList.push(response.response.sentences[0].words[i].token);
+      }
+      wordList.pop();
+      console.log("wordList: ", wordList);
+      console.log("wordList[1]", wordList[1]);    
+
+      //ajax call getting all the emojis and their data
+      var queryURL = `https://www.emojidex.com/api/v1/utf_emoji`;
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+          
+        .then(function(response) {
+          emojiList = JSON.parse(response);
+            
+          // creates an array of all emoji codes
+          for (let i = 0; i < emojiList.length; i++) {
+              
+            emojiArray.push(emojiList[i].code);
+          }
+          console.log("emojiArray:", emojiArray);
+          console.log("wordlist", wordList)
+          wordLooper();
+          
+          // iterates through individual words from textInput field
+          function wordLooper() {
+            i=i
+            // console.log("wordlistb", wordList);
+            // console.log("emojiArrayLooper", emojiArray);
+            // console.log(emojiArray[0]);
+            // console.log(wordList[0]);
+            
+            for (let k = 0; k < wordList.length; k++) {
+              // console.log(wordList[k]);
+              currentWord = wordList[k];
+              masterWordHolder.push({label: k, value: []});
+              // console.log("currentWord:", currentWord);
+              emojiWordSplitter(k);
+            }
+          }; 
+            
+          // iterates through individual words of emoji codes
+          function emojiWordSplitter (k) {
+
+            // console.log("wordlistb", wordList);
+            // console.log("emojiArrayLooper", emojiArray);
+            console.log(emojiArray[0]);
+            // console.log(wordList[0]);
+            k = k
+            
+            for (let i = 0; i < emojiArray.length; i++) {        
+
+              var splitEmoji = emojiArray[i].split(" ");     
+              // console.log("splitemoji", splitEmoji)
+              wordComparer(splitEmoji, k, i);
+            }
+
+          };
+
+          function wordComparer (splitEmoji, k, i) {
+            var finalIndexList = masterWordHolder[k]       
+            
+            for (let m = 0; m < splitEmoji.length; m++) {
+                      
+              var currentEmojiWord = splitEmoji[m];
+      
+              // console.log("currentEmojiWord", currentEmojiWord);
+              console.log("currentWord later", currentWord);
+              // console.log("emojiYes", emojiYes)
+              // pushes positive results to array
+              if (currentEmojiWord === currentWord) {
+                 
+                finalIndexList.value.push(i);
+
+              }
+                                  
+            }                   
+          }
+          console.log("final wordList", masterWordHolder)
+          emojiPlacer()
+        });         
+    }); 
+}    
+
+
+    function emojiPlacer() {
+      // selects random result from emojis which have passed all matching tests      
+      for (let p = 0; p < masterWordHolder.length; p++) {
+        
+        var EMOJI = masterWordHolder[p].value[Math.floor(Math.random() * masterWordHolder[p].value.length)]
+        var spoon = $("#outputField");
+        var emojiIcon = String.fromCodePoint("0x" + emojiList[EMOJI].unicode);
+        
+        $("<span>").text(emojiIcon).appendTo(spoon);
+
+      }
+      
+      
+      console.log(EMOJI);
+      
+    }
+
+
+
+
 
     })
 
@@ -217,6 +337,7 @@ function wordLooper(wordList) {
   // }
   // emojiWordSplitter();
 }; 
+
 
 
 
