@@ -138,18 +138,20 @@ function emojiPlacer() {
 }
 
 function clear () {
-  document.location.reload();
+  // document.location.reload();
+  $('outputField').empty();
 }
 
 
 // initiator
-$("#button").click(function(event) {
+$("#form").submit(function(event) {
   event.preventDefault();
+  clear();
   textRazorAPI();
 });
 
 // clear all fields
-$("#clearButton").click(function() {
-  clear();
-});
+// $("#clearButton").click(function() {
+//   clear();
+// });
 
