@@ -45,7 +45,7 @@ function textRazorAPI() {
           
         .then(function(response) {
           emojiList = JSON.parse(response);
-            
+          console.log(emojiList);  
           // creates an array of all emoji codes
           for (let i = 0; i < emojiList.length; i++) {
               
@@ -89,6 +89,8 @@ function textRazorAPI() {
               var currentEmojiWord = splitEmoji[m];
       
               // console.log("currentEmojiWord:", currentEmojiWord);
+              // console.log("currentWord later:", currentWord);
+
               console.log("currentWord later:", currentWord);
               
               // pushes positive results to array
@@ -96,8 +98,7 @@ function textRazorAPI() {
                  
                 finalIndexList.value.push(i);
 
-              }
-                                  
+              }                                  
             }                   
           }
           console.log("final match list:", masterWordHolder);
@@ -106,6 +107,8 @@ function textRazorAPI() {
     }); 
 }    
 
+
+function emojiPlacer() {
 
     function emojiPlacer() {
       // iterates through final matched list  
@@ -118,6 +121,28 @@ function textRazorAPI() {
           // selects random result from emojis which have passed all matching tests   
           var EMOJI = masterWordHolder[p].value[Math.floor(Math.random() * masterWordHolder[p].value.length)]
           // creates HTML viable unicode string for emojis
+          // console.log(EMOJI);
+          console.log(EMOJI);
+          console.log(emojiList[EMOJI].unicode);
+          var fixedEmoji = emojiList[EMOJI].unicode.substr(0,5)
+          console.log(fixedEmoji)
+          var emojiIcon = String.fromCodePoint("0x" + fixedEmoji);
+          // console.log(emojiIcon)
+          // writes emojis to outputField
+          $("<span>").text(emojiIcon).appendTo(spoon);
+          
+        }
+          else {
+            // alert("empty")
+          }
+        
+      }     
+}
+
+function clear () {
+  document.location.reload();
+}
+
           var emojiIcon = String.fromCodePoint("0x" + emojiList[EMOJI].unicode);
           // writes emojis to outputField
           $("<span>").text(emojiIcon).appendTo(spoon);
@@ -133,5 +158,10 @@ function textRazorAPI() {
 $("#button").click(function(event) {
   event.preventDefault();
   textRazorAPI();
+});
+
+// clear all fields
+$("#clearButton").click(function() {
+  clear();
 });
 
