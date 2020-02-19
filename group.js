@@ -3,7 +3,7 @@
 //the compiled working code is within textRazor to keep scope correct
 var emojiArray = [];
 var currentWord = [];
-var masterWordHolder = [];
+var masterWordHolder = new Array();
 
 //textRazor api code
 function textRazorAPI() {
@@ -31,11 +31,9 @@ function textRazorAPI() {
       for (var i = 0; i < response.response.sentences[0].words.length; i++) {
           wordList.push(response.response.sentences[0].words[i].token);
       }
-      
-        console.log("wordList: ", wordList);
-        console.log("wordList[1]", wordList[1]); 
-    
-      // --------------------------------------------------    
+      wordList.pop();
+      console.log("wordList: ", wordList);
+      console.log("wordList[1]", wordList[1]);    
 
       //ajax call getting all the emojis and their data
       var queryURL = `https://www.emojidex.com/api/v1/utf_emoji`;
@@ -65,9 +63,10 @@ function textRazorAPI() {
             // console.log(wordList[0]);
             
             for (let k = 0; k < wordList.length; k++) {
-              console.log(wordList[k]);
+              // console.log(wordList[k]);
               currentWord = wordList[k];
-              console.log("currentWord:", currentWord);
+              masterWordHolder.push({label: k, value: []});
+              // console.log("currentWord:", currentWord);
               emojiWordSplitter(k);
             }
           }; 
@@ -91,50 +90,48 @@ function textRazorAPI() {
           };
 
           function wordComparer (splitEmoji, k, i) {
-            var finalIndexList = masterWordHolder[k]
-                     
+            var finalIndexList = masterWordHolder[k]       
+            
             for (let m = 0; m < splitEmoji.length; m++) {
                       
               var currentEmojiWord = splitEmoji[m];
-              var emojiYes = currentEmojiWord.search(currentWord);
-              
+      
               // console.log("currentEmojiWord", currentEmojiWord);
               console.log("currentWord later", currentWord);
               // console.log("emojiYes", emojiYes)
               // pushes positive results to array
-              if (emojiYes > -1) {
-                
-                finalIndexList.push(i);
-                
-              }  
-                  
-            } 
-                  
+              if (currentEmojiWord === currentWord) {
+                 
+                finalIndexList.value.push(i);
+
+              }
+                                  
+            }                   
           }
           console.log("final wordList", masterWordHolder)
-        });
-      
-//  -------------------------------------------------------- 
-
-    
+          emojiPlacer()
+        });         
     }); 
 }    
 
 
-//     function emojiPlacer(emojiArray, wordList) {
-//       // selects random result from emojis which have passed all matching tests
+    function emojiPlacer() {
+      // selects random result from emojis which have passed all matching tests      
+      for (let p = 0; p < masterWordHolder.length; p++) {
+        
+        var EMOJI = masterWordHolder[p].value[Math.floor(Math.random() * masterWordHolder[p].value.length)]
+        var spoon = $("#outputField");
+        var emojiIcon = String.fromCodePoint("0x" + emojiList[EMOJI].unicode);
+        
+        $("<span>").text(emojiIcon).appendTo(spoon);
+
+      }
       
       
-//       var emojiOptionsNumber = wordlist[i].
-//       var EMOJI = matched[Math.floor(Math.random() * matched.length)];
-//       console.log(EMOJI);
+      console.log(EMOJI);
       
-//       // writes selected emoji to outputField
-//       var spoon = $("#outputField");
-//       var emojiIcon = String.fromCodePoint("0x" + emojiList[EMOJI].unicode);
-//       spoon.text(emojiIcon);
-//     }
-// }
+    }
+
 
 
 
