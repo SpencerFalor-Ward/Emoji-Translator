@@ -90,6 +90,8 @@ function textRazorAPI() {
       
               // console.log("currentEmojiWord:", currentEmojiWord);
               // console.log("currentWord later:", currentWord);
+
+              console.log("currentWord later:", currentWord);
               
               // pushes positive results to array
               if (currentEmojiWord === currentWord) {
@@ -107,6 +109,8 @@ function textRazorAPI() {
 
 
 function emojiPlacer() {
+
+    function emojiPlacer() {
       // iterates through final matched list  
       for (let p = 0; p < masterWordHolder.length; p++) {
         
@@ -139,6 +143,17 @@ function clear () {
   document.location.reload();
 }
 
+          var emojiIcon = String.fromCodePoint("0x" + emojiList[EMOJI].unicode);
+          // writes emojis to outputField
+          $("<span>").text(emojiIcon).appendTo(spoon);
+        }
+          else {
+            return;
+          }
+        
+      }    
+      console.log(EMOJI);  
+    }
 // initiator
 $("#button").click(function(event) {
   event.preventDefault();
@@ -149,3 +164,4 @@ $("#button").click(function(event) {
 $("#clearButton").click(function() {
   clear();
 });
+
