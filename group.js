@@ -91,7 +91,7 @@ function textRazorAPI() {
               // console.log("currentEmojiWord:", currentEmojiWord);
               // console.log("currentWord later:", currentWord);
 
-              console.log("currentWord later:", currentWord);
+              // console.log("currentWord later:", currentWord);
               
               // pushes positive results to array
               if (currentEmojiWord === currentWord) {
@@ -139,19 +139,25 @@ function emojiPlacer() {
 
 function clear () {
   document.location.reload();
-  //$('outputField').empty();
+
+  // $('outputField').empty();
+
+ 
+
 }
 
 
 // initiator
 $("#form").submit(function(event) {
   event.preventDefault();
-  //clear();
+
+  // clear();
+
   textRazorAPI();
 });
 
 // clear all fields
-// $("#clearButton").click(function() {
-//   clear();
-// });
+$("#clearButton").click(function() {
+  clear();
+});
 
