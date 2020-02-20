@@ -37,8 +37,7 @@ function textRazorAPI() {
     $.ajax({
       url: queryURL,
       method: "GET"
-    })
-    .then(function(response) {
+    }).then(function(response) {
       emojiList = JSON.parse(response);
       console.log(emojiList);
       // creates an array of all emoji codes
