@@ -1,10 +1,10 @@
-body {
+/* body {
     background-color: rgb(182, 182, 182);
     text-align: center;
     background-image: url('https://lh3.googleusercontent.com/proxy/J51VluT8YinO9Oz634pMwsQnSOiJ7HFNbw-mDR1L9gjVKKyMWQ3zOsYj6fKWZ2I54DOWnqKb-pQYxY3E05c2Jat-5M2GFsgg');
-}
+} */
 
-#header {
+/* #header {
     font-size: 100px;
     color:rgb(229, 255, 0);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -90,4 +90,106 @@ body {
 
 button {
     background-color: rgb(229, 255, 0);
+} */
+
+body {
+    background-image: linear-gradient(rgb(250, 133, 137), rgb(243, 6, 14), rgb(250, 133, 137));
+    text-align: center;
+    
+}
+
+.header {
+    font-size: 100px;
+    color: rgb(229, 255, 0);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    text-shadow: 0px 0px 12px black;
+}
+
+#headp {
+    padding: 0;
+    margin: 0;
+}
+
+.bottom {
+    height: auto;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#form {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 400px;
+    width: 840px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.boxes {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+#inputField {
+    height: 230px;
+    width: 360px;
+    float: left;
+    border: solid;
+    border-color: black;
+    color: rgb(173, 173, 173);
+    background-color: rgb(229, 255, 0);
+    box-shadow: 0px 0px 10px black;
+    padding: 5px;
+    color: black;
+    font-size: 200%;
+    margin: 0% 4% 0 2%;
+    text-align: center;
+}
+
+#outputField {
+    height: 250px;
+    width: 360px;
+    float: right;
+    border: solid;
+    border-color: black;
+    color: rgb(173, 173, 173);
+    background-color: rgb(229, 255, 0);
+    box-shadow: 0px 0px 10px black;
+    font-size: 200%;
+    padding: 5px;
+    margin: 0% 4% 0 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonBox {
+    margin: 5%;
+}
+
+button {
+    height: fit-content;
+    width: fit-content;
+    padding: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    border: solid;
+    border-color: black;
+    background-color: rgb(229, 255, 0);
+    box-shadow: 0px 0px 10px black;
+    font-size: x-large;
+    font-weight: strong;
 }
