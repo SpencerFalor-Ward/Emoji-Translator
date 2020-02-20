@@ -139,14 +139,20 @@ function emojiPlacer() {
 
 function clear () {
   document.location.reload();
+
   // $('outputField').empty();
+
+ 
+
 }
 
 
 // initiator
 $("#form").submit(function(event) {
   event.preventDefault();
+
   // clear();
+
   textRazorAPI();
 });
 
