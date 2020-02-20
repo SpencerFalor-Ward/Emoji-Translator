@@ -138,15 +138,15 @@ function emojiPlacer() {
 }
 
 function clear () {
-  // document.location.reload();
-  $('outputField').empty();
+  document.location.reload();
+  //$('outputField').empty();
 }
 
 
 // initiator
 $("#form").submit(function(event) {
   event.preventDefault();
-  clear();
+  //clear();
   textRazorAPI();
 });
 
