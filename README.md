@@ -1,9 +1,9 @@
 # Bootcamp-group-project-1 :smiley:
 
 ## Goal for the project / User Statement 
-For A modern adult :smirk:
-We WANT to transform words into Emojis :astonished:
-SO THAT THEY can be hip with the kids :sunglasses:
+- For A modern adult :smirk:
+- We WANT to transform words into Emojis :astonished:
+- SO THAT THEY can be hip with the kids :sunglasses:
 
 ## Benefits of this project
 - **Practice all we have learned thus far in the course** 
