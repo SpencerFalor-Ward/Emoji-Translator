@@ -93,12 +93,12 @@ button {
 } */
 
 body {
-    background-color: rgb(182, 182, 182);
+    background-image: linear-gradient(rgb(250, 133, 137), rgb(243, 6, 14), rgb(250, 133, 137));
     text-align: center;
-    background-image: url(https://lh3.googleusercontent.com/proxy/J51VluT8YinO9Oz634pMwsQnSOiJ7HFNbw-mDR1L9gjVKKyMWQ3zOsYj6fKWZ2I54DOWnqKb-pQYxY3E05c2Jat-5M2GFsgg);
+    
 }
 
-#header {
+.header {
     font-size: 100px;
     color: rgb(229, 255, 0);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;

@@ -157,6 +157,7 @@ $("#form").submit(function(event) {
 });
 
 // clear all fields
+
 $("#clearButton").click(function() {
   clear();
 });
