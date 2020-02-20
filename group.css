@@ -7,7 +7,7 @@ body {
   text-align: center;
 }
 
-.header {
+#header {
   font-family: "Bungee Shade";
   font-size: 100;
   color: rgb(229, 255, 0);
