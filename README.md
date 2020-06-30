@@ -4,9 +4,9 @@
 
 ## Table of contents
 
--   [Goals](#Goal for the project)
--   [Benefits](#Benefits of this project)
--   [Hurdels](#Hurdels of this project)
+-   [Goals](#Goal)
+-   [Benefits](#Benefits)
+-   [Hurdels](#Hurdels)
 -   [Liscence](#Liscence)
 -   [Contributing](#Contributing)
 -   [Questions](#Questions)
