@@ -1,4 +1,4 @@
-# [Bootcamp-group-project-1](https://spencerfalor-ward.github.io/Bootcamp-group-project-1/) :smiley:
+# [Emoji translator](https://spencerfalor-ward.github.io/Bootcamp-group-project-1/) :smiley:
 
 [![Followers](https://img.shields.io/github/followers/SpencerFalor-Ward?style=social)](https://github.com/SpencerFalor-Ward?tab=followers) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Language](https://img.shields.io/github/languages/top/SpencerFalor-Ward/Bootcamp-group-project-1)](https://github.com/SpencerFalor-Ward/Bootcamp-group-project-1/search?l=javascript) [![Latest Commit](https://img.shields.io/github/last-commit/SpencerFalor-Ward/Bootcamp-group-project-1)](https://github.com/SpencerFalor-Ward/Bootcamp-group-project-1/graphs/commit-activity)
 
