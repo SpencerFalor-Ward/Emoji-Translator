@@ -7,7 +7,7 @@
 -   [Goals](#Goal)
 -   [Benefits](#Benefits)
 -   [Hurdels](#Hurdels)
--   [Liscence](#Liscence)
+-   [License](#License)
 -   [Contributing](#Contributing)
 -   [Questions](#Questions)
 -   [Contact](#Contact)
@@ -35,7 +35,7 @@ Input your query into the search. Select your results. Save them for future view
 
 ![Emoji translator demo](./assets/emojiTranslatorDemo.gif)
 
-## Liscence
+## License
 
 Licensed under the [MIT License](https://choosealicense.com/licenses/mit/) license.
 
